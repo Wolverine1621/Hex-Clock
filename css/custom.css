@@ -1,0 +1,70 @@
+body {
+    -webkit-transition:background-color 1s ease;
+   -moz-transition:background-color 1s ease;
+   -o-transition:background-color 1s ease;
+   transition:background-color 1s ease;
+}
+
+#wrapper {
+    color: white;
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 150px;
+}
+
+#timetype {
+    font-size: 50px;
+    position: relative;
+    top: -175px;
+    display: none;
+}
+
+#hexcolor {
+    font-size: 75px;
+    position: absolute;
+    left: 50%;
+    margin-left: -152.65636px;
+    top: 40%; /* https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element 
+    centering method */
+}
+
+#buttons {
+    position: absolute;
+    bottom: 10px;
+}
+
+#infobtn #utcbtn #hidebtn {
+    margin-left: 5px;
+}
+
+#hidingbuttons {
+    display: inline-block;
+}
+
+.btn {
+    background: transparent;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+.wf-loading p {
+    visibility: hidden;
+}
+
+.wf-active .wf-inactive p {
+    visibility: visible;
+    font-family: "Open Sans";
+}
+/*http://stackoverflow.com/questions/21116824/smooth-transition-while-background-switch
+http://stackoverflow.com/questions/23971392/smooth-color-change-in-js*/
