@@ -120,7 +120,6 @@ function infoAlert() {
     + "To switch to UTC or back, click the UTC button.\n" +
     "To switch between 12 and 24 hour format, click the type button.\n"
     + "To toggle buttons except the \"hide\" button, click hide.\n" +
-    "Intended for desktop use. Sorry™, mobile users! :)\n" +
     "- Noah K.\n");    
 }
 
