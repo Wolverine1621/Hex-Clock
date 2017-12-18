@@ -9,25 +9,20 @@ function init() {
   document.getElementById("utcbtn").onclick = function() {
     buttonHasBeenPressed = !buttonHasBeenPressed; // reverses boolean
   };
-  
+
   document.getElementById("timeformat").onclick = function() {
     defaultTimeFormat = !defaultTimeFormat;
   };
 
   document.getElementById("infobtn").onclick = function() {
     infoAlert();
-    
+
   };
-  
-  /*
-  document.getElementById("alarmbtn").onclick = function() {
-    alarm.getUserInput();
-  };*/ // Alarm code
-  
+
   startTime();
 }
 
-// MAIN LOOP // 
+// MAIN LOOP //
 function startTime() {
   var today = new Date();
 
@@ -36,7 +31,7 @@ function startTime() {
   } else {
     getNormalTime(today);
   }
-  
+
   if(!defaultTimeFormat) {
     convertTime();
   } else {
@@ -44,23 +39,20 @@ function startTime() {
       formatString = "";
     }
   }
-  
+
   h = checkTimeHour(h);
   m = checkTime(m);
   s = checkTime(s);
 
   var timeString = "" + h + ":" + m + ":" + s + formatString;
   var colorString = "#" + h + m + s;
-  
-  // Alarm checking
-  //alarm.checkAlarmTime(timeString);
-  
+
   drawPage(timeString, colorString);
 
   setTimeout(startTime, 500);
 };
 
-// HELPER METHODS // 
+// HELPER METHODS //
 function checkTime(i) {
   if (i < 10) {
       i = "0" + i;
@@ -73,7 +65,7 @@ function checkTimeHour(i) {
   if (defaultTimeFormat) { // if 24hr format, use regular checktime
     return checkTime(i);
   }
-  
+
   return i; // else no zeros need to be added
 }
 
@@ -86,7 +78,7 @@ function drawPage(timeString, colorString) {
       colorString = colorString.slice(0,1) + colorString.slice(1);
     }
   }
-  
+
   document.getElementById("main").innerHTML = timeString;
   document.getElementById("hexcolor").innerHTML = colorString;
   document.body.style.backgroundColor = colorString;
@@ -110,16 +102,13 @@ function convertTime() {
     formatString = " PM";
   } else if (h < 12) {
     formatString = " AM";
-  } /*else {
-    formatString = ""
-  }*/
+  } 
 }
 
 function infoAlert() {
-  sweetAlert("Adhera Clock", "To toggle color code, click the time.\n"
+  sweetAlert("Hex Clock", "To toggle color code, click the time.\n"
     + "To switch to UTC or back, click the UTC button.\n" +
     "To switch between 12 and 24 hour format, click the type button.\n"
     + "To toggle buttons except the \"hide\" button, click hide.\n" +
-    "- Noah K.\n");    
+    "- Noah K.\n");
 }
-
